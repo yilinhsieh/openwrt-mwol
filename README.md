@@ -20,28 +20,20 @@ most suited for your case to get it:
 
 ### Adding mwol to your running OpenWRT as ipk package
 
-#### via LuCI
-
-  * Go to System -> Software
-  * Paste the following URL into the **Download and install package** field:
-    - http://192.168.1.225:3000/mleaf/mwol_1.0.0-1_arm_cortex-a7_neon-vfpv4.ipk
-    - http://192.168.1.225:3000/mleaf/luci-app-mwol_1.0-2_all.ipk
-  * Press Enter or click "OK"
-
 #### via shell
 
     $ cd /tmp
-    $ wget http://192.168.1.225:3000/mleaf/mwol_1.0.0-1_arm_cortex-a7_neon-vfpv4.ipk
-    $ wget http://192.168.1.225:3000/mleaf/luci-app-mwol_1.0-2_all.ipk
-    $ opkg install mwol_1.0.0-1_arm_cortex-a7_neon-vfpv4.ipk
-    $ opkg install luci-app-mwol_1.0-2_all.ipk
+    $ wget mwol_1.0.0-1_aarch64_cortex-a53_neon-vfpv4.ipk
+    $ wget luci-app-wol_unknown-1_all.ipk
+    $ opkg install mwol_1.0.0-1_aarch64_cortex-a53_neon-vfpv4.ipk
+    $ opkg install luci-app-wol_unknown-1_all.ipk
 
 ### Adding Mwol to your own OpenWRT Build
 
 Download mwol from github:
 
     # openwrt-mwol
-    git clone http://192.168.1.225:3000/mleaf/openwrt-mwol.git package/openwrt-mwol
+    git clone https://github.com/yilinhsieh/openwrt-mwol  package/openwrt-mwol
 
 Install the package:
 

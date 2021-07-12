@@ -14,12 +14,12 @@ PKG_RELEASE=1
 
 
 PKG_LICENSE:=GPL-3.0
-PKG_MAINTAINER:=mleaf <mleaf90@gmail.com>
+PKG_MAINTAINER:=ylhsieh  <yilin.hsieh@hawkeyetech.com.tw>
 PKG_LICENSE_FILES:=COPYING
 
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=https://github.com/Mleaf/mwol.git
-PKG_SOURCE_VERSION:=59f9805901b4ac2916a0273ffbc29197fcd17a62
+PKG_SOURCE_URL:=https://github.com/yilinhsieh/mwol.git
+PKG_SOURCE_VERSION:=c7f5dad01f550be60489a3a41dccd4a26a430421
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
 
 
@@ -34,7 +34,7 @@ define Package/mwol
   CATEGORY:=Network
   DEPENDS:=+libpthread +libmosquitto-ssl +luci-lib-json +libopenssl
   TITLE:=MQTT Wake On Lan
-  URL:=http://www.mleaf.org
+  URL:= 
 endef
 
 define Package/mwol/description

@@ -12,17 +12,16 @@ local sys = require "luci.sys"
 
 local mac=luci.sys.exec("uci -q get mwol.mwol_conf.id")
 
-m=Map("mwol",translate("Mqtt wake on lan"),translate("请关注微信公众号【WiFi物联网】获取更多信息: \
-<a href=\"http://www.mleaf.org/downloads/logo/201911171573997716658567.jpg\" target=\"_blank\">【WiFi物联网】</a>"))
+m=Map("mwol",translate("Mqtt wake on lan"))
 
 if SYS.call("pidof mwol >/dev/null") == 0 then
-	Status = translate("<strong><font color=\"green\">Mwol正在运行...</font></strong>")
+	Status = translate("<strong><font color=\"green\">Mwol is running...</font></strong>")
 else
-	Status = translate("<strong><font color=\"red\">Mwol未运行...</font></strong>")
+	Status = translate("<strong><font color=\"red\">Mwol not run yet...</font></strong>")
 end
 
-subTopic=string.format("<strong><font color=\"red\">Mwol订阅消息主题: /mwol/%s</font></strong>", mac)
-pubTopic=string.format("<strong><font color=\"red\">Mwol发布消息主题: /mwol/%s</font></strong>", mac)
+subTopic=string.format("<strong><font color=\"red\">Mwol subscribe Topic: /mwol/%s</font></strong>", mac)
+pubTopic=string.format("<strong><font color=\"red\">Mwol publish Topic: /mwol/%s</font></strong>", mac)
 
 --
 -- LoRa Gateway config for gateway_conf
@@ -78,7 +77,7 @@ encryption_enable:value(0, translate("False"))
 encryption_username = mwol:taboption("encryptionSettings", Value,"username",translate("MQTT UserName"))
 encryption_username.optional = true;
 encryption_username.rmempty = true;
-encryption_username.default = "mleaf"
+encryption_username.default = "hkwol"
 encryption_username.datatype = "string"
 encryption_username:depends("encryptionenable", "1")
 
@@ -88,7 +87,7 @@ encryption_username:depends("encryptionenable", "1")
 encryption_password = mwol:taboption("encryptionSettings", Value,"password",translate("MQTT Password"))
 encryption_password.optional = true;
 encryption_password.rmempty = true;
-encryption_password.default = "www.mleaf.org"
+encryption_password.default = "hk1234"
 encryption_password.datatype = "string"
 encryption_password:depends("encryptionenable", "1")
 
